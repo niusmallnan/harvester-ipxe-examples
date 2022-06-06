@@ -9,12 +9,8 @@ os:
   - 1.suse.pool.ntp.org
 install:
   mode: create
-  networks:
-    harvester-mgmt:    # The management bond name. This is mandatory.
-      interfaces:
-      - name: eth0
-      default_route: true
-      method: dhcp
   device: /dev/sda
-  iso_url: https://releases.rancher.com/harvester/master/harvester-master-amd64.iso
+  iso_url: https://releases.rancher.com/harvester/v1.0.2/harvester-v1.0.2-amd64.iso
   tty: ttyS1,115200n8
+  vip_mode: static
+  vip: x.x.x.x  # 任意填写，其他节点可通过 public ip 加入到集群
